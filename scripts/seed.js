@@ -26,6 +26,7 @@ async function seed() {
     {
         name: 'Bleu de Chanel',
         brand: 'Chanel',
+        concentration: 'Eau de Toilette',
         slug: 'bleu-de-chanel',
         imageUrl: 'https://www.chanel.com/images//t_one/t_fragrance//q_auto:good,f_auto,fl_lossy,dpr_1.1/w_1920/bleu-de-chanel-eau-de-toilette-spray-3-4fl-oz--packshot-default-107460-9564920184862.jpg',
         brandLogoUrl: brandLogos['Chanel'],
@@ -66,6 +67,7 @@ async function seed() {
         name: 'Dior Sauvage',
         brand: 'Dior',
         slug: 'dior-sauvage',
+        concentration: 'Eau de Toilette',
         brandLogoUrl:  brandLogos['Dior'],
         imageUrl: 'https://www.dior.com/dw/image/v2/BGXS_PRD/on/demandware.static/-/Sites-master_dior/default/dwb57d0b59/Y0685240/Y0685240_F068524009_E01_GHC.jpg?sw=800',
         prices: [
