@@ -1,7 +1,8 @@
 import { connectToDatabase } from '@/lib/db'
 import Fragrance from '@/lib/models/Fragrance'
+import { requireAdmin } from '@/lib/auth'
 
-export default async function handler(req, res) {
+async function handler(req, res) {
     await connectToDatabase()
 
     if (req.method === 'POST') {
@@ -28,4 +29,12 @@ export default async function handler(req, res) {
         res.setHeader('Allow', ['GET', 'POST'])
         res.status(405).end(`Method ${req.method} Not Allowed`)
 }
+}
+
+// Protect POST with admin requirement
+export default function protectedHandler(req, res) {
+  if (req.method === 'POST') {
+    return requireAdmin(handler)(req, res)
+  }
+  return handler(req, res)
 }
