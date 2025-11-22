@@ -10,27 +10,26 @@ const PriceSchema = new mongoose.Schema({
 }, { _id: false })
 
 const NotesSchema = new mongoose.Schema({
-  top:  [String],
+  top: [String],
   middle: [String],
   base: [String],
   general: [String],      // ✅ for .nb_n cases
 }, { _id: false })
 
 const FragranceSchema = new mongoose.Schema({
-  name:        { type: String, required: true },
-  brand:       { type: String, required: true },
-  collectionName:  { type: String },                     // ✅ optional
+  name: { type: String, required: true },
+  brand: { type: String, required: true },
+  collectionName: { type: String },                     // ✅ optional
   concentration: {
     type: String,
-    enum: ['Eau de Toilette','Eau de Parfum','Parfum','Eau de Cologne','Extrait de Parfum'],
     default: 'Eau de Toilette'
   },
-  notes:       NotesSchema,
-  slug:        { type: String, required: true, unique: true },
-  imageUrl:    { type: String },                     // ✅ fill later
-  brandLogoUrl:{ type: String },                     // ✅ fill later
-  prices:      { type: [PriceSchema], default: [] }, // ✅ fill later
-  createdAt:   { type: Date, default: Date.now }
+  notes: NotesSchema,
+  slug: { type: String, required: true, unique: true },
+  imageUrl: { type: String },                     // ✅ fill later
+  brandLogoUrl: { type: String },                     // ✅ fill later
+  prices: { type: [PriceSchema], default: [] }, // ✅ fill later
+  createdAt: { type: Date, default: Date.now }
 })
 
 // Helpful secondary unique to avoid dupes if slugging ever changes
